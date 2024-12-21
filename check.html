@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>インストーラー版の警告 | PureWhite Browser</title>
+        <link rel="icon" href="icon.png">
+        <style>
+            .center{
+            width:500px;
+            margin: 0 auto;
+          }
+          .next-button {
+        background: #2c6ebd;
+        color: #ffffff;
+        border-radius: 0.25em;
+        padding: 1em 2em 0.8em;
+        line-height: 1;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        margin-top: 20px; /* ボタン間の隙間を開けるために追加 */
+      }
+          </style>
+    </head>
+    <body>
+        <div class="center">
+            <h1>インストーラー版の警告</h1>
+            <p>現在、インストーラーがWindows Defenderに検出される問題が確認されています。</p>
+            <p>また、インストーラーが実行できない可能性もあり、現在<a href="https://www.pwb.f5.si/portable">Portable</a>版をお勧めしています。</p>
+            <p>本ブラウザにマルウェアなどの有害なプログラムは含まれていません。</p>
+            <p>というか、入れても何にもなりませんし。</p>
+            <a class="download-button" 
+            href="https://www.dropbox.com/scl/fi/lxhrbdxqoljxtp0eq1c8v/purewhitedl.exe?rlkey=xdpfk9bkazkpu047br5k8tpui&st=2fmxh5j0&dl=1" 
+            target="_blank"
+            onclick="setTimeout(() => window.location.href='https://www.pwb.f5.si/thanksdl.html', 1000);">
+           承知したうえでインストーラーをダウンロード
+         </a>
+        </div>
+    </body>
+</html>
