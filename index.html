@@ -28,16 +28,6 @@
         cursor: pointer;
       }
     </style>
-    <script>
-      function redirectToLinks() {
-        // 最初のリンクに移動
-        window.open("https://www.dropbox.com/scl/fi/lxhrbdxqoljxtp0eq1c8v/purewhitedl.exe?rlkey=xdpfk9bkazkpu047br5k8tpui&st=2fmxh5j0&dl=1", "_blank");
-        // 次のリンクに移動
-        setTimeout(function () {
-        window.open("https://www.pwb.f5.si/thanksdl.html", "_blank");
-        }, 1000); // 3000ms = 3秒
-      }
-    </script>
   </head>
   <body>
     <div class="center">
@@ -47,7 +37,11 @@
       <p>これだけ小さくて広告ブロック機能を用意。</p>
       <p>もちろんJavaScriptにも対応。</p>
       <p>ページの縮小、拡大が手軽に行えます。</p>
-      <div class="download-button" onclick="redirectToLinks()">ダウンロード</div>
+      <a class="download-button" 
+         href="https://www.dropbox.com/scl/fi/lxhrbdxqoljxtp0eq1c8v/purewhitedl.exe?rlkey=xdpfk9bkazkpu047br5k8tpui&st=2fmxh5j0&dl=1" 
+         target="_blank"
+         onclick="setTimeout(() => window.location.href='https://www.pwb.f5.si/thanksdl.html', 1000);">
+        ダウンロード
     </div>
   </body>
 </html>
