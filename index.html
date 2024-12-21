@@ -13,8 +13,18 @@
       }
       .center {
         text-align: center;
-        width: 500px;
-        margin: auto;
+        max-width: 500px; /* 最大幅を設定 */
+        margin: 0 auto; /* 横方向中央寄せ */
+      }
+      h1 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      p {
+        font-size: 1em;
+        margin: 5px 0;
+        color: #555;
       }
       .download-button {
         background: #2c6ebd;
@@ -26,6 +36,9 @@
         text-decoration: none;
         font-size: 1.2em;
         cursor: pointer;
+      }
+      .download-button:hover {
+        background: #1e5ca3; /* ホバー時に少し濃くする */
       }
     </style>
   </head>
@@ -42,6 +55,7 @@
          target="_blank"
          onclick="setTimeout(() => window.location.href='https://www.pwb.f5.si/thanksdl.html', 1000);">
         ダウンロード
+      </a>
     </div>
   </body>
 </html>
