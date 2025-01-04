@@ -13,8 +13,8 @@
       }
       .center {
         text-align: center;
-        max-width: 500px; /* 最大幅を設定 */
-        margin: 0 auto; /* 横方向中央寄せ */
+        max-width: 500px;
+        margin: 0 auto;
       }
       h1 {
         font-size: 1.8em;
@@ -36,10 +36,20 @@
         text-decoration: none;
         font-size: 1.2em;
         cursor: pointer;
-        margin-top: 20px; /* ボタン間の隙間を開けるために追加 */
+        margin-top: 20px;
       }
       .download-button:hover {
-        background: #1e5ca3; /* ホバー時に少し濃くする */
+        background: #1e5ca3;
+      }
+      .disabled {
+        background: #cccccc;
+        color: #666666;
+        cursor: not-allowed;
+      }
+      .warning {
+        color: red;
+        margin-top: 10px;
+        font-size: 0.9em;
       }
     </style>
   </head>
@@ -51,22 +61,41 @@
       <p>これだけ小さくて広告ブロック機能を用意。</p>
       <p>もちろんJavaScriptにも対応。</p>
       <p>ページの縮小、拡大が手軽に行えます。</p>
-      <a class="download-button" 
+      <a id="download-windows" class="download-button" 
          href="https://www.dropbox.com/scl/fi/38ez6wrdwm4wkg6zf8p2c/PureWhite-Installer.exe?rlkey=rtdeaopk10i5v6yet9bu9ewjw&st=5pp2ty9x&dl=1" 
          target="_blank"
          onclick="setTimeout(() => window.location.href='https://www.pwb.f5.si/thanksdl.html', 1000);">
-        ダウンロード
+        ダウンロード (Windowsのみ)
       </a>
-      <a class="download-button" 
+      <a id="download-portable" class="download-button" 
          href="https://www.dropbox.com/scl/fi/xxark9curncxeymqrxoa4/PureWhite.zip?rlkey=zanuex5ummg91pvs9r7gmel52&st=aj37kcl1&dl=1" 
          target="_blank"
          onclick="setTimeout(() => window.location.href='https://www.pwb.f5.si/thankdl.html', 1000);">
         Portable版をダウンロード
       </a>
+      <p id="non-windows-warning" class="warning" style="display: none;">
+        現在提供しているバージョンはWindowsのみです。今後のアップデートをご期待ください。
+      </p>
       <br>
-      <br>
-      <a href="https://www.pwb.f5.si/release"
-         target="_blank">その他のバージョン</a>
+      <a href="https://www.pwb.f5.si/release" target="_blank">その他のバージョン</a>
     </div>
+
+    <script>
+      // ユーザーエージェントでOSを判定
+      const isWindows = navigator.userAgent.includes("Windows");
+      const windowsButton = document.getElementById("download-windows");
+      const portableButton = document.getElementById("download-portable");
+      const warningMessage = document.getElementById("non-windows-warning");
+
+      if (!isWindows) {
+        // Windows以外の場合、ボタンを無効化
+        windowsButton.classList.add("disabled");
+        windowsButton.removeAttribute("href");
+        windowsButton.onclick = (e) => e.preventDefault();
+        
+        // 注意メッセージを表示
+        warningMessage.style.display = "block";
+      }
+    </script>
   </body>
 </html>
